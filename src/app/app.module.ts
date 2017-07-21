@@ -4,17 +4,22 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { GetAddressComponent } from './get-address/get-address.component';
+import { GetLatLongComponent } from './get-lat-long/get-lat-long.component';
+import { GeocodingService } from './geocoding.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GetAddressComponent,
+    GetLatLongComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [GeocodingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
