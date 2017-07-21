@@ -1,0 +1,20 @@
+<div class="form">
+  <label for="cache-name">Name:</label>
+  <input type="text" name="cacheName" #cacheName value="testName">
+  <select name="loc-type" #locInput (change)="onChange($event.target.value)">
+    <option value=""> Choose Location Type </option>
+    <option value="latLong">Latitude and Longitude</option>
+    <option value="address">Address</option>
+  </select>
+  <div *ngIf="locType=='latLong'">
+    <label for="latInput">Latitude:</label>
+    <input type="number" name="latInput" #latInput value="">
+    <label for="longInput">Longitude:</label>
+    <input type="number" name="longInput" #longInput value="">
+  </div>
+  <div *ngIf="locType === 'address'">
+    <label for="addressInput">Address:</label>
+    <input type="text" name="addressInput" #addressInput value="">
+  </div>
+  <button (click)="submitGeocache(cacheName.value, latInput.value, longInput.value, addressInput.value)">Add Geocache</button>
+</div>

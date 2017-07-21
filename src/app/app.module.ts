@@ -7,12 +7,16 @@ import { AppComponent } from './app.component';
 import { GetAddressComponent } from './get-address/get-address.component';
 import { GetLatLongComponent } from './get-lat-long/get-lat-long.component';
 import { GeocodingService } from './geocoding.service';
+import { NewGeocacheComponent } from './new-geocache/new-geocache.component';
+import { ListGeocacheComponent } from './list-geocache/list-geocache.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GetAddressComponent,
-    GetLatLongComponent
+    GetLatLongComponent,
+    NewGeocacheComponent,
+    ListGeocacheComponent
   ],
   imports: [
     BrowserModule,

@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'GeoCacher!';
+  masterGeocacheList: any[];
+
+  saveGeocache(geocache) {
+    this.masterGeocacheList.push(geocache);
+  }
 }

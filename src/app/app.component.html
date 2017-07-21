@@ -6,4 +6,6 @@
 <hr>
 <app-get-lat-long></app-get-lat-long>
 <hr>
-<app-new-cache></app-new-cache>
+<app-new-geocache (emittedGeocache)="saveGeocache($event)"></app-new-geocache>
+<hr>
+<app-list-geocache [childGeocacheList]="masterGeocacheList"></app-list-geocache>
