@@ -1,3 +1,17 @@
-<p>
-  get-address works!
-</p>
+<div class="container">
+  <div class="form">
+    <div class="form-group">
+      <label for="address">Address:</label>
+      <input type="text" name="address" #userAddress value="711 Lake Avenue">
+    </div>
+    <button class="btn btn-md" type="button" (click)="getLatLong(userAddress.value)">Get Latitude and Longitude!</button>
+  </div>
+  <div *ngIf="latLongObj" class="panel panel-info">
+    <div class="panel-heading">GeoCache</div>
+    <div class="panel-body">
+      <p>Latitude: {{latitude}}</p>
+      <p>Longitude: {{longitude}}</p>
+    </div>
+    <p class="panel-footer">Best Address Guess: {{latLongObj.formatted_address}}</p>
+  </div>
+</div>

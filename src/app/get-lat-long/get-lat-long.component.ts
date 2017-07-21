@@ -9,7 +9,8 @@ import { GeocodingService } from './../geocoding.service';
 export class GetLatLongComponent implements OnInit {
   latitude: string;
   longitude: string;
-  addressObj: string;
+  address: string;
+  addressObj: object;
 
   constructor(
     private geocodingService: GeocodingService
@@ -19,11 +20,12 @@ export class GetLatLongComponent implements OnInit {
   }
 
   getAddress(userLat: string, userLong: string) {
-    this.latitude = userLat;
-    this.longitude = userLong;
     this.geocodingService.getAddress(userLat, userLong).subscribe(response => {
       console.log(response.json().results[0]);
       this.addressObj = response.json().results[0];
+      this.address = response.json().results[0].formatted_address;
+      this.latitude = response.json().results[0].geometry.location.lat;
+      this.longitude = response.json().results[0].geometry.location.lng;
     });
   }
 

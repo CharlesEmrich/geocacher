@@ -12,8 +12,7 @@
   </div>
   <div *ngIf="addressObj" class="panel panel-info">
     <div class="panel-heading">GeoCache</div>
-    <div class="panel-body">
-      <p *ngFor="let component of addressObj.address_components">{{component.short_name}}</p>
-    </div>
+    <div class="panel-body">{{address}}</div>
+    <div class="panel-footer">Best Guess Latitude: {{latitude}} | Best Guess Longitude: {{longitude}}</div>
   </div>
 </div>
