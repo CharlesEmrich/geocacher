@@ -1,0 +1,20 @@
+{
+  "name": "geocacher",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Charles Emrich <libertinistic@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "boostrap#^3.3.7"
+  }
+}

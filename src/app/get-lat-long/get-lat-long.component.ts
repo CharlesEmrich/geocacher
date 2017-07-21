@@ -22,8 +22,8 @@ export class GetLatLongComponent implements OnInit {
     this.latitude = userLat;
     this.longitude = userLong;
     this.geocodingService.getAddress(userLat, userLong).subscribe(response => {
-      console.log(response.json().results);
-      this.addressObj = response.json().results;
+      console.log(response.json().results[0]);
+      this.addressObj = response.json().results[0];
     });
   }
 

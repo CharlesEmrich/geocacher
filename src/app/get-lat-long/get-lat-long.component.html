@@ -2,17 +2,18 @@
   <div class="form">
     <div class="form-group">
       <label for="latitude">Latitude:</label>
-      <input type="number" name="latitude" #userLat value="25">
+      <input type="number" name="latitude" #userLat value="45.5231">
     </div>
     <div class="form-group">
       <label for="longitude">Longitude:</label>
-      <input type="number" name="longitude" #userLong value="25">
+      <input type="number" name="longitude" #userLong value="122.6765">
     </div>
     <button class="btn btn-md" type="button" (click)="getAddress(userLat.value, userLong.value)">Get Address!</button>
   </div>
   <div *ngIf="addressObj" class="panel panel-info">
-    <div class="panel-heading">heading!</div>
-    <div class="panel-body">Content!</div>
-    <div class="panel-footer">sub-Content!</div>
-  </div>  
+    <div class="panel-heading">GeoCache</div>
+    <div class="panel-body">
+      <p *ngFor="let component of addressObj.address_components">{{component.short_name}}</p>
+    </div>
+  </div>
 </div>
